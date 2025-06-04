@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - Nimi Crochet</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Nimi Crochet</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Productos 
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="amigurumis.html" target="_blank">Amigurumis</a>
+                        <a href="accesorios.html" target="_blank">Accesorios</a>
+                        <a href="ropa.html" target="_blank">Ropa</a>
+                        <a href="decoracion.html" target="_blank">Decoración</a>
+                    </div>
+                </div>
+                <a href="index.html#quienes-somos">Quiénes Somos</a>
+                <a href="index.html#cursos">Cursos Online</a>
+                <a href="index.html#pagos">Pagos</a>
+                <a href="index.html#rastreo">Rastrear Pedido</a>
+                <a href="carrito.html" class="active"><i class="fas fa-shopping-cart"></i> Carrito</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="carrito-container">
+        <section class="carrito-content">
+            <h2>Tu Carrito de Compras</h2>
+            <div id="items-carrito">
+                <!-- Los items del carrito se cargarán dinámicamente aquí -->
+            </div>
+            <div class="carrito-total">
+                <h3>Total: <span id="total-precio">$0</span></h3>
+                <button class="btn-primary" onclick="procederPago()">Proceder al Pago</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="redes-sociales">
+                <h3>Síguenos en Redes Sociales</h3>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/nimi.crochet?igsh=MWNvMTlncTQzc3IxMg==" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="contacto">
+                <h3>Contacto</h3>
+                <p>Email: info@nimicrochet.com</p>
+                <p>WhatsApp: +XX XXXX-XXXX</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Nimi Crochet. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

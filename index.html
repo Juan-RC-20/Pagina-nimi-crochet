@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nimi Crochet - Artesanía en Tejido</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="sharingan-overlay" class="overlay">
+        <video id="sharingan-video" class="sharingan-video" muted playsinline>
+            <source src="images/Itachi's Mangekyo Sharingan [Eyes Only] (4K).mp4" type="video/mp4">
+        </video>
+    </div>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/nimi-logo.jpg" alt="Nimi Crochet Logo" class="logo-img">
+                <h1>Nimi Crochet</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#inicio" class="active">Inicio</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Productos 
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="amigurumis.html">Amigurumis</a>
+                        <a href="accesorios.html">Accesorios</a>
+                        <a href="ropa.html">Ropa</a>
+                        <a href="decoracion.html">Decoración</a>
+                    </div>
+                </div>
+                <a href="#quienes-somos">Quiénes Somos</a>
+                <a href="#cursos">Cursos Online</a>
+                <a href="#pagos">Pagos</a>
+                <a href="#rastreo">Rastrear Pedido</a>
+                <a href="carrito.html"><i class="fas fa-shopping-cart"></i> Carrito</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <h2>Bienvenidos a Nimi Crochet</h2>
+            <p>Descubre el arte del crochet con nuestras creaciones únicas y hechas a mano</p>
+        </section>
+
+        <section id="productos" class="productos">
+            <h2>Nuestros Productos</h2>
+            <div class="productos-grid">
+                <div class="producto-card">
+                    <img src="placeholder-amigurumi.jpg" alt="Amigurumi">
+                    <h3>Amigurumis</h3>
+                    <p>Tiernos muñecos tejidos a mano</p>
+                </div>
+                <!-- Más productos se agregarán aquí -->
+            </div>
+        </section>
+
+        <section id="quienes-somos" class="quienes-somos">
+            <h2>Quiénes Somos</h2>
+            <div class="contenido">
+                <p>Somos un equipo apasionado por el arte del crochet, dedicados a crear piezas únicas y hermosas para ti.</p>
+            </div>
+        </section>
+
+        <section id="cursos" class="cursos">
+            <h2>Cursos Online</h2>
+            <div class="cursos-grid">
+                <div class="curso-card">
+                    <h3>Curso Básico de Crochet</h3>
+                    <p>Aprende desde cero con nuestros tutoriales paso a paso</p>
+                    <button class="btn-primary">Más información</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="pagos" class="pagos">
+            <h2>Métodos de Pago</h2>
+            <div class="metodos-pago">
+                <div class="metodo-pago-item">
+                    <a href="nequi-pago.html">
+                        <div class="logo-container">
+                            <img src="images/nequi-logo.png" alt="Nequi" class="pago-logo">
+                        </div>
+                        <p>Paga con Nequi</p>
+                    </a>
+                </div>
+                <div class="metodo-pago-item">
+                    <a href="dale-pago.html">
+                        <div class="logo-container">
+                            <img src="images/dale-logo.png" alt="dale!" class="pago-logo">
+                        </div>
+                        <p>Paga con dale</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="rastreo" class="rastreo">
+            <h2>Rastrear Pedido</h2>
+            <div class="rastreo-form">
+                <input type="text" placeholder="Número de ticket" id="ticket-number">
+                <button class="btn-primary" onclick="rastrearPedido()">Buscar</button>
+            </div>
+            <div id="resultado-rastreo"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="redes-sociales">
+                <h3>Síguenos en Redes Sociales</h3>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/nimi.crochet?igsh=MWNvMTlncTQzc3IxMg==" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@nimi.crochet?_t=ZS-8wsSvljiDTA&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="contacto">
+                <h3>Contacto</h3>
+                <p>Email: info@nimicrochet.com</p>
+                <p>WhatsApp: +XX XXXX-XXXX</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Nimi Crochet. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

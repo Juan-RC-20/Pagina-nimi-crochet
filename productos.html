@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Nimi Crochet</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .categoria-productos {
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .categoria-titulo {
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            padding-top: 4rem;
+        }
+
+        .volver-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            border-radius: 50%;
+            text-decoration: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .volver-btn:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Nimi Crochet</h1>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="amigurumis" class="categoria-productos">
+            <h2 class="categoria-titulo">Amigurumis</h2>
+            <div class="productos-grid" id="grid-amigurumis"></div>
+        </section>
+
+        <section id="accesorios" class="categoria-productos">
+            <h2 class="categoria-titulo">Accesorios</h2>
+            <div class="productos-grid" id="grid-accesorios"></div>
+        </section>
+
+        <section id="ropa" class="categoria-productos">
+            <h2 class="categoria-titulo">Ropa</h2>
+            <div class="productos-grid" id="grid-ropa"></div>
+        </section>
+
+        <section id="decoracion" class="categoria-productos">
+            <h2 class="categoria-titulo">Decoración</h2>
+            <div class="productos-grid" id="grid-decoracion"></div>
+        </section>
+    </main>
+
+    <a href="index.html" class="volver-btn" title="Volver a la página principal">
+        <i class="fas fa-home"></i>
+    </a>
+
+    <script>
+        // Función para cargar productos por categoría
+        function cargarProductosPorCategoria() {
+            const productos = {
+                amigurumis: [
+                    {
+                        imagen: 'amigurumi-conejo.jpg',
+                        nombre: 'Amigurumi Conejo',
+                        descripcion: 'Tierno conejo tejido a mano',
+                        precio: 'COP 85.000'
+                    },
+                    {
+                        imagen: 'amigurumi-unicornio.jpg',
+                        nombre: 'Amigurumi Unicornio',
+                        descripcion: 'Mágico unicornio multicolor',
+                        precio: 'COP 95.000'
+                    }
+                ],
+                accesorios: [
+                    {
+                        imagen: 'bufanda-invierno.jpg',
+                        nombre: 'Bufanda de Invierno',
+                        descripcion: 'Bufanda suave y cálida',
+                        precio: 'COP 65.000'
+                    },
+                    {
+                        imagen: 'gorro-tejido.jpg',
+                        nombre: 'Gorro Tejido',
+                        descripcion: 'Gorro con diseño único',
+                        precio: 'COP 45.000'
+                    }
+                ],
+                ropa: [
+                    {
+                        imagen: 'chaleco-tejido.jpg',
+                        nombre: 'Chaleco Tejido',
+                        descripcion: 'Chaleco elegante y cómodo',
+                        precio: 'COP 120.000'
+                    },
+                    {
+                        imagen: 'sueter-crochet.jpg',
+                        nombre: 'Suéter de Crochet',
+                        descripcion: 'Suéter artesanal con diseño único',
+                        precio: 'COP 150.000'
+                    }
+                ],
+                decoracion: [
+                    {
+                        imagen: 'cesta-decorativa.jpg',
+                        nombre: 'Cesta Decorativa',
+                        descripcion: 'Perfecta para organizar',
+                        precio: 'COP 75.000'
+                    },
+                    {
+                        imagen: 'tapete-mandala.jpg',
+                        nombre: 'Tapete Mandala',
+                        descripcion: 'Hermoso tapete tejido a mano',
+                        precio: 'COP 180.000'
+                    }
+                ]
+            };
+
+            // Cargar productos para cada categoría
+            Object.keys(productos).forEach(categoria => {
+                const grid = document.getElementById(`grid-${categoria}`);
+                productos[categoria].forEach(producto => {
+                    const productoCard = document.createElement('div');
+                    productoCard.className = 'producto-card';
+                    productoCard.innerHTML = `
+                        <img src="${producto.imagen}" alt="${producto.nombre}">
+                        <h3>${producto.nombre}</h3>
+                        <p>${producto.descripcion}</p>
+                        <p class="precio">${producto.precio}</p>
+                        <button class="btn-primary">Agregar al Carrito</button>
+                    `;
+                    grid.appendChild(productoCard);
+                });
+            });
+        }
+
+        // Cargar productos cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', cargarProductosPorCategoria);
+
+        // Scroll suave a las categorías
+        if (window.location.hash) {
+            const elemento = document.querySelector(window.location.hash);
+            if (elemento) {
+                elemento.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html> 
