@@ -654,6 +654,32 @@ footer {
     max-height: 100vh;
 }
 
+/* Video visibility control */
+.mobile-video {
+    display: none;
+}
+
+.desktop-video {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .mobile-video {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+    }
+    
+    .desktop-video {
+        display: none;
+    }
+    
+    .overlay {
+        background-color: rgba(0, 0, 0, 0.98);
+    }
+}
+
 .sharingan {
     width: 300px;
     height: 300px;
@@ -702,18 +728,6 @@ footer {
     100% {
         opacity: 1;
         transform: translateX(0);
-    }
-}
-
-@media (max-width: 768px) {
-    .sharingan-video {
-        width: 100vw;
-        height: 100vh;
-        object-fit: cover;
-    }
-    
-    .overlay {
-        background-color: rgba(0, 0, 0, 0.98);
     }
 }
 

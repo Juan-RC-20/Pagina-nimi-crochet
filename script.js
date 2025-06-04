@@ -160,23 +160,30 @@ function cargarProductos() {
 // Cargar productos cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', cargarProductos);
 
+// Sharingan Video Control
 document.addEventListener('DOMContentLoaded', function() {
+    const desktopVideo = document.getElementById('sharingan-video');
+    const mobileVideo = document.getElementById('mobile-video');
     const overlay = document.getElementById('sharingan-overlay');
-    const video = document.getElementById('sharingan-video');
     
-    // Iniciar reproducción del video
-    video.play();
+    // Detectar si es dispositivo móvil
+    const isMobile = window.innerWidth <= 768;
     
-    // Configurar temporizador para detener el video después de 4 segundos
-    setTimeout(() => {
-        video.pause();
-        // Agregar fade out al overlay
-        overlay.style.transition = 'opacity 1s';
-        overlay.style.opacity = '0';
-        
-        // Remover el overlay después de la animación
-        setTimeout(() => {
-            overlay.style.display = 'none';
-        }, 1000);
-    }, 4000);
+    if (isMobile) {
+        if (mobileVideo) {
+            mobileVideo.play();
+            setTimeout(() => {
+                mobileVideo.pause();
+                overlay.style.animation = 'fadeOut 1s forwards';
+            }, 4000);
+        }
+    } else {
+        if (desktopVideo) {
+            desktopVideo.play();
+            setTimeout(() => {
+                desktopVideo.pause();
+                overlay.style.animation = 'fadeOut 1s forwards';
+            }, 4000);
+        }
+    }
 }); 
