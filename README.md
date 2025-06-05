@@ -1,69 +1,74 @@
-# Nimi Crochet - Sitio Web
+# Nimi Crochet - Tienda de Artesanía en Tejido
 
-Este es el sitio web de Nimi Crochet, una tienda en línea especializada en productos de crochet hechos a mano.
+Bienvenido al repositorio de la tienda en línea de Nimi Crochet, un espacio dedicado a la venta de productos artesanales tejidos a mano.
 
 ## Características
 
-- Página de inicio con diseño moderno y responsive
-- Catálogo de productos con categorías
-- Sistema de navegación con menú desplegable
-- Sección de cursos en línea
-- Sistema de rastreo de pedidos
-- Integración con redes sociales
-- Diseño adaptable para dispositivos móviles
+- Catálogo de productos organizados por categorías
+- Sistema de personalización de productos
+- Carrito de compras
+- Formulario de contacto
+- Diseño responsive
+
+## Funcionalidad de Personalización
+
+La nueva funcionalidad de personalización permite a los clientes:
+- Seleccionar el tamaño del producto
+- Elegir colores principales y secundarios
+- Añadir accesorios adicionales
+- Subir imágenes de referencia
+- Ver precios actualizados en tiempo real
 
 ## Tecnologías Utilizadas
 
 - HTML5
-- CSS3 (con variables CSS personalizadas)
-- JavaScript (Vanilla JS)
+- CSS3
+- JavaScript (Vanilla)
 - Font Awesome para iconos
 
-## Estructura de Archivos
+## Estructura del Proyecto
 
 ```
-.
+Nimi Crochet Pagina/
 ├── index.html
 ├── styles.css
 ├── script.js
-└── README.md
+├── personalizacion.js
+├── personalizar.html
+├── carrito.html
+├── productos/
+│   ├── amigurumis.html
+│   ├── accesorios.html
+│   ├── ropa.html
+│   └── decoracion.html
+└── images/
+    └── ...
 ```
 
 ## Instalación
 
-1. Clona este repositorio
-2. Abre el archivo `index.html` en tu navegador web
+1. Clona este repositorio:
+```bash
+git clone https://github.com/[tu-usuario]/nimi-crochet.git
+```
 
-## Uso
+2. Abre el archivo `index.html` en tu navegador web preferido.
 
-### Rastreo de Pedidos
-Para probar el sistema de rastreo de pedidos, usa los siguientes números de ticket:
-- TICKET001 (En preparación)
-- TICKET002 (En camino)
-- TICKET003 (Entregado)
-
-### Personalización
-- Los colores principales se pueden modificar en el archivo `styles.css` dentro de las variables CSS (`:root`)
-- Las imágenes de productos se deben colocar en la misma carpeta y actualizar las rutas en `script.js`
-
-## Desarrollo Futuro
-
-- Implementar carrito de compras
-- Agregar sistema de autenticación
-- Integrar pasarela de pagos
-- Añadir más categorías de productos
-- Implementar sistema de búsqueda
-
-## Contribución
+## Contribuir
 
 Si deseas contribuir al proyecto:
+
 1. Haz un Fork del repositorio
-2. Crea una rama para tu característica (`git checkout -b feature/AmazingFeature`)
-3. Haz commit de tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
+2. Crea una nueva rama (`git checkout -b feature/nueva-caracteristica`)
+3. Haz commit de tus cambios (`git commit -m 'Añade nueva característica'`)
+4. Haz push a la rama (`git push origin feature/nueva-caracteristica`)
 5. Abre un Pull Request
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
 
 ## Contacto
 
-Email: info@nimicrochet.com
-WhatsApp: +XX XXXX-XXXX 
+- Instagram: [@nimi.crochet](https://www.instagram.com/nimi.crochet)
+- TikTok: [@nimi.crochet](https://www.tiktok.com/@nimi.crochet) 
