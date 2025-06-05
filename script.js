@@ -166,24 +166,44 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileVideo = document.getElementById('mobile-video');
     const overlay = document.getElementById('sharingan-overlay');
     
+    // Configuración de calidad de video
+    function setupVideoQuality(video) {
+        if (video) {
+            // Forzar máxima calidad
+            video.addEventListener('loadedmetadata', function() {
+                if (video.height >= 2160) { // Si el video es 4K
+                    video.style.width = '100%';
+                    video.style.height = '100%';
+                    video.style.objectFit = 'cover';
+                }
+            });
+            
+            // Asegurar que el video se reproduzca en la mejor calidad posible
+            video.playbackQuality = 'high';
+            video.playbackRate = 1.0;
+        }
+    }
+
     // Detectar si es dispositivo móvil
     const isMobile = window.innerWidth <= 768;
     
     if (isMobile) {
         if (mobileVideo) {
+            setupVideoQuality(mobileVideo);
             mobileVideo.play();
             setTimeout(() => {
                 mobileVideo.pause();
-                overlay.style.animation = 'fadeOut 1s forwards';
-            }, 4000);
+                overlay.style.animation = 'fadeOut 1.5s forwards';
+            }, 5000); // 5 segundos de reproducción
         }
     } else {
         if (desktopVideo) {
+            setupVideoQuality(desktopVideo);
             desktopVideo.play();
             setTimeout(() => {
                 desktopVideo.pause();
-                overlay.style.animation = 'fadeOut 1s forwards';
-            }, 4000);
+                overlay.style.animation = 'fadeOut 1.5s forwards';
+            }, 5000); // 5 segundos de reproducción
         }
     }
 }); 

@@ -637,21 +637,27 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: black;
+    z-index: 9999;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999;
-    animation: fadeOut 3s forwards;
-    pointer-events: none;
+    opacity: 1;
 }
 
 .sharingan-video {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    max-width: 100vw;
-    max-height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scale(1.01); /* Evita bordes blancos */
+    backface-visibility: hidden; /* Mejora el rendimiento */
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1.01);
+    transform: translateZ(0) scale(1.01);
+    will-change: transform; /* Optimización de rendimiento */
 }
 
 /* Video visibility control */
@@ -666,9 +672,6 @@ footer {
 @media (max-width: 768px) {
     .mobile-video {
         display: block;
-        width: 100vw;
-        height: 100vh;
-        object-fit: cover;
     }
     
     .desktop-video {
@@ -676,7 +679,7 @@ footer {
     }
     
     .overlay {
-        background-color: rgba(0, 0, 0, 0.98);
+        background-color: black;
     }
 }
 
@@ -688,8 +691,10 @@ footer {
 }
 
 @keyframes fadeOut {
-    from { opacity: 1; }
-    to { 
+    from {
+        opacity: 1;
+    }
+    to {
         opacity: 0;
         visibility: hidden;
     }
