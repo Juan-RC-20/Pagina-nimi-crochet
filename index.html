@@ -3,29 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nimi Crochet - Artesanía en tejido, amigurumis y productos personalizados">
+    <meta name="theme-color" content="#8B4513">
     <title>Nimi Crochet - Artesanía en Tejido</title>
+    
+    <!-- Precargar recursos críticos -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    
+    <!-- Estilos -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Preconectar a dominios externos -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
     <div id="sharingan-overlay" class="overlay">
-        <video id="sharingan-video" class="sharingan-video desktop-video" muted playsinline>
+        <video id="sharingan-video" class="sharingan-video desktop-video" muted playsinline preload="metadata">
             <source src="images/Itachi's Mangekyo Sharingan [Eyes Only] (4K).mp4" type="video/mp4">
         </video>
-        <video id="mobile-video" class="sharingan-video mobile-video" muted playsinline>
+        <video id="mobile-video" class="sharingan-video mobile-video" muted playsinline preload="metadata">
             <source src="images/Naruto sharingan edit -- naruto edit -- [4k edit] amv -- Sharingan Live Wallpaper.mp4" type="video/mp4">
         </video>
     </div>
     <header>
         <nav class="navbar">
             <div class="logo">
-                <img src="images/nimi-logo.jpg" alt="Nimi Crochet Logo" class="logo-img">
-                <h1>Nimi Crochet</h1>
+                <img src="images/nimi-logo.jpg" alt="Nimi Crochet Logo" class="logo-img" width="50" height="50">
+                <h1 class="logo-graffiti" data-text="Nimi Crochet">
+                    <span style="--i:1">N</span>
+                    <span style="--i:2">i</span>
+                    <span style="--i:3">m</span>
+                    <span style="--i:4">i</span>
+                    <span style="--i:5"> </span>
+                    <span style="--i:6">C</span>
+                    <span style="--i:7">r</span>
+                    <span style="--i:8">o</span>
+                    <span style="--i:9">c</span>
+                    <span style="--i:10">h</span>
+                    <span style="--i:11">e</span>
+                    <span style="--i:12">t</span>
+                </h1>
             </div>
             <div class="nav-links">
-                <a href="#inicio" class="active">Inicio</a>
+                <a href="#inicio" class="active hover-expand">Inicio</a>
                 <div class="dropdown">
-                    <button class="dropbtn">Productos 
+                    <button class="dropbtn hover-expand">Productos 
                         <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="dropdown-content">
@@ -35,29 +61,56 @@
                         <a href="decoracion.html">Decoración</a>
                     </div>
                 </div>
-                <a href="#quienes-somos">Quiénes Somos</a>
-                <a href="#cursos">Cursos Online</a>
-                <a href="#pagos">Pagos</a>
-                <a href="#rastreo">Rastrear Pedido</a>
-                <a href="carrito.html"><i class="fas fa-shopping-cart"></i> Carrito</a>
+                <a href="#quienes-somos" class="hover-expand">Quiénes Somos</a>
+                <a href="#cursos" class="hover-expand">Cursos Online</a>
+                <a href="#pagos" class="hover-expand">Pagos</a>
+                <a href="#rastreo" class="hover-expand">Rastrear Pedido</a>
+                <a href="carrito.html" class="hover-expand"><i class="fas fa-shopping-cart"></i> Carrito</a>
             </div>
         </nav>
     </header>
 
     <main>
         <section id="inicio" class="hero">
-            <h2>Bienvenidos a Nimi Crochet</h2>
-            <p>Descubre el arte del crochet con nuestras creaciones únicas y hechas a mano</p>
+            <h2 class="texto-ondulado">
+                <span style="--i:1">B</span>
+                <span style="--i:2">i</span>
+                <span style="--i:3">e</span>
+                <span style="--i:4">n</span>
+                <span style="--i:5">v</span>
+                <span style="--i:6">e</span>
+                <span style="--i:7">n</span>
+                <span style="--i:8">i</span>
+                <span style="--i:9">d</span>
+                <span style="--i:10">o</span>
+                <span style="--i:11">s</span>
+                <span style="--i:12"> </span>
+                <span style="--i:13">a</span>
+                <span style="--i:14"> </span>
+                <span style="--i:15">N</span>
+                <span style="--i:16">i</span>
+                <span style="--i:17">m</span>
+                <span style="--i:18">i</span>
+                <span style="--i:19"> </span>
+                <span style="--i:20">C</span>
+                <span style="--i:21">r</span>
+                <span style="--i:22">o</span>
+                <span style="--i:23">c</span>
+                <span style="--i:24">h</span>
+                <span style="--i:25">e</span>
+                <span style="--i:26">t</span>
+            </h2>
+            <p class="texto-typing">Descubre el arte del crochet con nuestras creaciones únicas y hechas a mano</p>
         </section>
 
         <section id="productos" class="productos">
-            <h2>Nuestros Productos</h2>
+            <h2 class="texto-brillante">Nuestros Productos</h2>
             <div class="productos-grid">
                 <div class="producto-card">
-                    <img src="placeholder-amigurumi.jpg" alt="Amigurumi">
-                    <h3>Amigurumis</h3>
+                    <img src="placeholder-amigurumi.jpg" alt="Amigurumi" loading="lazy" width="300" height="200">
+                    <h3 class="texto-animado">Amigurumis</h3>
                     <p>Tiernos muñecos tejidos a mano</p>
-                    <a href="personalizar.html?tipo=amigurumi" class="btn-personalizar">
+                    <a href="personalizar.html?tipo=amigurumi" class="btn-personalizar hover-expand">
                         <i class="fas fa-magic"></i> Personalizar Diseño
                     </a>
                 </div>
@@ -66,9 +119,9 @@
         </section>
 
         <section id="quienes-somos" class="quienes-somos">
-            <h2>Quiénes Somos</h2>
+            <h2 class="texto-brillante">Quiénes Somos</h2>
             <div class="contenido">
-                <p>Somos un equipo apasionado por el arte del crochet, dedicados a crear piezas únicas y hermosas para ti.</p>
+                <p class="texto-animado">Somos un equipo apasionado por el arte del crochet, dedicados a crear piezas únicas y hermosas para ti.</p>
             </div>
         </section>
 
@@ -118,23 +171,39 @@
     <footer>
         <div class="footer-content">
             <div class="redes-sociales">
-                <h3>Síguenos en Redes Sociales</h3>
+                <h3 class="texto-brillante">Síguenos en Redes Sociales</h3>
                 <div class="social-icons">
-                    <a href="https://www.instagram.com/nimi.crochet?igsh=MWNvMTlncTQzc3IxMg==" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.tiktok.com/@nimi.crochet?_t=ZS-8wsSvljiDTA&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/nimi.crochet?igsh=MWNvMTlncTQzc3IxMg==" target="_blank" class="hover-rotate"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@nimi.crochet?_t=ZS-8wsSvljiDTA&_r=1" target="_blank" class="hover-rotate"><i class="fab fa-tiktok"></i></a>
                 </div>
             </div>
             <div class="contacto">
-                <h3>Contacto</h3>
-                <p>Email: info@nimicrochet.com</p>
-                <p>WhatsApp: +XX XXXX-XXXX</p>
+                <h3 class="texto-brillante">Contacto</h3>
+                <p class="texto-animado">Email: info@nimicrochet.com</p>
+                <p class="texto-animado">WhatsApp: +XX XXXX-XXXX</p>
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2025 Nimi Crochet. Todos los derechos reservados.</p>
+            <p class="texto-typing">© 2025 Nimi Crochet. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Scripts -->
+    <script src="script.js" defer></script>
+    
+    <!-- Service Worker para PWA -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registrado');
+                    })
+                    .catch(error => {
+                        console.log('Error al registrar ServiceWorker:', error);
+                    });
+            });
+        }
+    </script>
 </body>
 </html> 

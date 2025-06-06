@@ -894,4 +894,219 @@ footer {
     .checkbox-group {
         grid-template-columns: 1fr;
     }
+}
+
+/* Animaciones de texto */
+.texto-animado {
+    display: inline-block;
+    position: relative;
+    animation: floatText 3s ease-in-out infinite;
+}
+
+.texto-brillante {
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color), var(--primary-color));
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shine 3s linear infinite;
+}
+
+.texto-ondulado span {
+    display: inline-block;
+    animation: waveText 2s ease-in-out infinite;
+    animation-delay: calc(0.1s * var(--i));
+}
+
+.texto-typing {
+    border-right: 2px solid var(--primary-color);
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+
+/* Keyframes para las animaciones */
+@keyframes floatText {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+@keyframes waveText {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: var(--primary-color);
+    }
+}
+
+/* Efecto hover para enlaces y títulos */
+.hover-expand {
+    transition: transform 0.3s ease;
+}
+
+.hover-expand:hover {
+    transform: scale(1.1);
+}
+
+.hover-rotate {
+    transition: transform 0.3s ease;
+}
+
+.hover-rotate:hover {
+    transform: rotate(5deg);
+}
+
+/* Estilo Graffiti para el logo */
+@font-face {
+    font-family: 'GraffitiFont';
+    src: url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+}
+
+.logo-graffiti {
+    position: relative;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 3.5rem;
+    background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1, #96CEB4, #FFEEAD);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 
+        3px 3px 0 rgba(0,0,0,0.2),
+        -1px -1px 0 rgba(0,0,0,0.2),
+        1px -1px 0 rgba(0,0,0,0.2),
+        -1px 1px 0 rgba(0,0,0,0.2),
+        1px 1px 0 rgba(0,0,0,0.2);
+    animation: 
+        gradientShift 8s ease infinite,
+        sprayPaint 1s ease-out,
+        drip 2s ease-in-out infinite;
+}
+
+.logo-graffiti::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    filter: blur(8px);
+    transform: scale(1.1);
+    animation: glowPulse 2s ease-in-out infinite;
+}
+
+.logo-graffiti span {
+    display: inline-block;
+    animation: sprayLetters 0.5s ease-out backwards;
+}
+
+/* Animaciones para el efecto graffiti */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes sprayPaint {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) rotate(-5deg);
+        filter: blur(10px);
+    }
+    50% {
+        opacity: 0.5;
+        filter: blur(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+        filter: blur(0);
+    }
+}
+
+@keyframes sprayLetters {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px) rotate(10deg);
+        filter: blur(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotate(0deg);
+        filter: blur(0);
+    }
+}
+
+@keyframes drip {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(2px);
+    }
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        opacity: 0.3;
+        filter: blur(8px);
+    }
+    50% {
+        opacity: 0.6;
+        filter: blur(12px);
+    }
+}
+
+/* Efecto de spray al hover */
+.logo-graffiti:hover {
+    animation: sprayShake 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+@keyframes sprayShake {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-2deg) scale(1.05);
+    }
+    75% {
+        transform: rotate(2deg) scale(1.05);
+    }
 } 
